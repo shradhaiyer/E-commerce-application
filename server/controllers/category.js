@@ -41,7 +41,9 @@ const createCategory = (req, res) => {
                 err : errorHandler(err)
             });
         }
-        res.json({data});
+        res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+
+        return res.json({data});
     })
 }
 
@@ -54,7 +56,7 @@ const updateCategory = (req, res) => {
                 err : errorHandler(err)
             });
         }
-        res.json({data});
+        return res.json({data});
     })
 }
 
