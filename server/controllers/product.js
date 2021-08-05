@@ -7,6 +7,7 @@ const { response } = require('express');
 
 const productById = (req, res, next, id) => {
     Product.findById(id)
+    .populate("category")
         .exec((err, product) => {
             if (err || !product) {
                 return res.status(400).json({
