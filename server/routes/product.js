@@ -9,6 +9,7 @@ const { createProduct,
         getRelatedproducts,
         listCategories,
         listBySearch,
+        listSearch,
         photo} = require('../controllers/product');
 const {requireSignin, isAuth, isAdmin} = require('../controllers/auth');
 const { userById } = require('../controllers/user');
@@ -21,6 +22,8 @@ router.get("/products", getAllProducts);
 router.get("/products/related/:productId" , getRelatedproducts);
 router.get("/products/categories" , listCategories);
 router.post("/products/by/search", listBySearch);
+router.get("/products/search", listSearch);
+
 router.get("/product/photo/:productId", photo);
 
 router.param('userId', userById);
