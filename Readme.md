@@ -1,0 +1,1 @@
+This is a fully functional e-commerce site which can be used as is or customized based on product requirements. 
